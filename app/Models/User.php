@@ -12,6 +12,11 @@ class User extends Authenticatable
 {
     /** @use HasFactory<UserFactory> */
     use HasFactory, Notifiable;
+    
+    public function expenses()
+    {
+        return $this->hasMany(\App\Models\Expense::class);
+    }
 
     /**
      * The attributes that are mass assignable.
